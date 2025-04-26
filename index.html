@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Website Screenshot Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <h2>Web Capture</h2>
+            <p>Capture screenshots of any website with different screen sizes</p>
+
+            <div class="setting-group">
+                <label class="setting-label"></label>
+                <div class="url-input-wrapper">
+                    <input type="text" id="url" placeholder="Enter website URL (https://...)" />
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label class="setting-label">Screen Size</label>
+                <div class="radio-group">
+                    <input type="radio" id="width1440" name="width" value="1440" checked>
+                    <label for="width1440">
+                        <img src="assets/laptop.svg" alt="laptop" class="preset-icon">
+                        Desktop (1440px)
+                    </label>
+
+                    <input type="radio" id="width1024" name="width" value="1024">
+                    <label for="width1024">
+                        <img src="assets/laptop-sm.svg" alt="laptop" class="preset-icon">
+                        Laptop (1024px)
+                    </label>
+
+                    <input type="radio" id="width768" name="width" value="768">
+                    <label for="width768">
+                        <img src="assets/tablet.svg" alt="tablet" class="preset-icon">
+                        Tablet (768px)
+                    </label>
+
+                    <input type="radio" id="width425" name="width" value="425">
+                    <label for="width425">
+                        <img src="assets/mobile.svg" alt="mobile" class="preset-icon">
+                        Mobile L (425px)
+                    </label>
+
+                    <input type="radio" id="width375" name="width" value="375">
+                    <label for="width375">
+                        <img src="assets/mobile.svg" alt="mobile" class="preset-icon">
+                        Mobile M (375px)
+                    </label>
+
+                    <input type="radio" id="width320" name="width" value="320">
+                    <label for="width320">
+                        <img src="assets/mobile.svg" alt="mobile" class="preset-icon">
+                        Mobile S (320px)
+                    </label>
+
+                    <input type="radio" id="widthCustom" name="width" value="custom">
+                    <label for="widthCustom">
+                        <img src="assets/custom.svg" alt="custom" class="preset-icon">
+                        Custom Width
+                    </label>
+                </div>
+                <div class="custom-width-wrapper">
+                    <input type="number" id="customWidth" placeholder="Enter custom width" class="custom-width-input" />
+                </div>
+            </div>
+
+            <button id="captureBtn" class="capture-btn">
+                <img src="assets/camera.svg" alt="capture" class="btn-icon">
+                <p>Capture Screenshot</p>
+            </button>
+        </div>
+
+        <div class="main-content">
+            <div class="preview-header">
+                <div class="header-left">
+
+                    <button id="saveBtn" class="save-btn" style="display:none;">
+                        <img src="assets/save.svg" alt="save" class="btn-icon">
+                        Save Image
+                    </button>
+                </div>
+                <div class="header-right">
+                    <div id="loader" style="display:none;">⏳ Capturing screenshot...</div>
+                    <p id="status"></p>
+                </div>
+            </div>
+
+            <div class="preview-area dark-scrollbar">
+                <div id="screenshotContainer">
+                    <img id="screenshotPreview" src="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+
+</html>

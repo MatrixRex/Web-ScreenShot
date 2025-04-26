@@ -1,0 +1,64 @@
+{
+  "name": "web-screenshot",
+  "version": "1.0.0",
+  "description": "A cross-platform desktop application to capture website screenshots at different screen sizes",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build",
+    "pack": "electron-builder --dir"
+  },
+  "build": {
+    "appId": "com.web.screenshot",
+    "productName": "Web Screenshot",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "assets/icon.png"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "assets/icon.png"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "assets/icon.png"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/Web-ScreenShot.git"
+  },
+  "keywords": [
+    "electron",
+    "screenshot",
+    "website",
+    "capture",
+    "desktop-app",
+    "cross-platform"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yourusername/Web-ScreenShot/issues"
+  },
+  "homepage": "https://github.com/yourusername/Web-ScreenShot#readme",
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^25.9.8",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "puppeteer": "^24.7.2"
+  }
+}
